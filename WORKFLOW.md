@@ -202,13 +202,7 @@ Genre   : Action / Romance / Comedy / Drama / Fantasy / Historical / Horror
 Era     : [ဘယ်ခေတ်၊ ဘယ်နေရာ]
 ```
 
-### Q9 — LANGUAGE
-```
-Dialogue  : မြန်မာ / English / နှစ်ခုလုံး
-Subtitle  : မြန်မာ / English / မလို
-```
-
-### Q10 — STORY OUTLINE
+### Q9 — STORY OUTLINE
 ```
 အောက်ပါကို အကြမ်းဖျင်း ပြောပါ —
 - ဇာတ်ကောင် အဓိက ဘယ်သူတွေ? (အမည်၊ role)
@@ -392,6 +386,22 @@ film grain, 8K, no cartoon elements"
 
 > 🔁 **"Character ✅ Lock မလား ❌ ပြင်မလား?"**
 > ✅ All characters locked → Phase 3
+
+> 📌 **CHARACTER REFERENCE METHOD**
+> Character approve ပြီး lock ချပြီးနောက် —
+> Phase 4 / Phase 5 prompts တွင် ဤနည်း ၂ မျိုးထဲမှ တစ်မျိုး သုံးရမည် —
+>
+> **နည်း ၁ — Image URL reference (အကြံပြု)**
+> Approved character image ကို cloud (Google Drive / Imgur / Discord) တင်ပြီး
+> URL ကို prompt ထဲ ထည့်ပါ —
+> `Reference image: [URL] — maintain exact same face, outfit, proportions`
+>
+> **နည်း ၂ — Text description lock**
+> Phase 2 မှ approve ဖြစ်သော character description အပြည့်ကို
+> Phase 4 / 5 prompt တိုင်းထဲ copy-paste လုပ်ပါ —
+> `[CHAR_Name — Phase 2 locked: skin tone, eye color, exact outfit detail, weapon]`
+>
+> ⚠️ နည်း ၂ ခုလုံးမသုံးဘဲ phase ဆက်မသွားရ — character consistency ပျက်မည်
 
 ---
 
@@ -764,22 +774,23 @@ Episode [N+1] — [day] မှာ ထွက်မည် — 🔔 နှိပ်
 ## ✅ PRODUCTION CHECKLIST
 
 ```
-[ ] STEP 0  — Aspect Ratio + Style + Script + Runtime + Tools + Story confirmed
-[ ] PHASE 1 — Episode 1 script approved ([N] clips, ~[X] min)
-[ ] PHASE 2 — All characters approved + locked
-[ ] PHASE 3 — All environments approved + locked
-[ ] PHASE 4 — All scene compositions approved
-[ ] PHASE 5 — All video prompts generated
-[ ]           Clips assembled in order
-[ ]           BGM mixed under dialogue
-[ ]           Subtitles synced
-[ ] PHASE 6 — SRT subtitles done
-[ ]           YouTube title (A/B/C) selected
-[ ]           Description written + timestamps added
-[ ]           Thumbnail created (1280x720)
-[ ]           Tags added
-[ ]           Pinned comment ready
-[ ]           Video uploaded to YouTube
+[ ] STEP 0    — Aspect Ratio + Style + Script + Runtime + Tools + Story confirmed
+[ ] PHASE 1   — Episode 1 script approved ([N] clips, ~[X] min)
+[ ] PHASE 1.5 — Dialogue language confirmed (မြန်မာ / English)
+[ ] PHASE 2   — All characters approved + locked + reference method set
+[ ] PHASE 3   — All environments approved + locked
+[ ] PHASE 4   — All scene compositions approved
+[ ] PHASE 5   — All video prompts generated
+[ ]             Clips assembled in order
+[ ]             BGM mixed under dialogue
+[ ]             Subtitles synced
+[ ] PHASE 6   — SRT subtitles done (မြန်မာ dialogue ရွေးထားလျှင်သာ)
+[ ]             YouTube title (A/B/C) selected
+[ ]             Description written + timestamps added
+[ ]             Thumbnail created (1280x720)
+[ ]             Tags added
+[ ]             Pinned comment ready
+[ ]             Video uploaded to YouTube
 ```
 
 ---
@@ -791,15 +802,20 @@ STEP 0  → Aspect Ratio → Style → Script ရှိ/မရှိ → Runtime
             ↓
 PHASE 1 → Script (Ep1 max 2min) → approve
             ↓
-PHASE 2 → Character prompts → approve → LOCK
+PHASE 1.5 → Dialogue language ရွေး (မြန်မာ / English)
+             မြန်မာ ရွေး → Phase 6 တွင် English SRT အလိုအလျောက်ထုတ်
+             English ရွေး → Phase 6 တွင် SRT skip
+            ↓
+PHASE 2 → Character prompts → approve → LOCK + reference method သတ်မှတ်
             ↓
 PHASE 3 → Environment prompts → approve → LOCK
             ↓
-PHASE 4 → Scene compositions (locked char + env) → approve
+PHASE 4 → Scene compositions (locked char ref + env) → approve
             ↓
 PHASE 5 → Video prompts → generate clips
             ↓
-PHASE 6 → SRT + YouTube title/description/thumbnail/tags/pinned comment
+PHASE 6 → [မြန်မာ] SRT English + YouTube package
+          [English] YouTube package only
 
 ✅ Episode 1 done → repeat PHASE 1 for Episode 2
 ```
