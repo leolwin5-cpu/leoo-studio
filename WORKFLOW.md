@@ -88,16 +88,30 @@ Video ဘယ် format နဲ့ လုပ်မှာလဲ ရွေးပါ 
 [F] CUSTOM — ကိုယ်တိုင် describe မည်
 ```
 
-### Q4 — SCRIPT
+### Q4 — STORY / SCRIPT
 ```
-Script ဘယ်လိုလုပ်မှာလဲ?
+ဇာတ်လမ်း ဘယ်လိုလုပ်မှာလဲ?
 
-[A] ငါ့မှာ script ရှိပြီးသား — paste လုပ်ပေးမည်
+[A] ငါ့မှာ script / story ရှိပြီးသား — paste လုပ်ပေးမည်
     → AI က script ကို clip format အဖြစ် ပြောင်းပေးမည်
+    → Phase 1 (Script) ဆက်သွားမည်
 
-[B] AI ရေးပေးပါ — story outline ပြောမည်
-    → AI က story outline ကို အခြေခံပြီး script ရေးပေးမည်
+[B] AI ကို topic 5 ခု generate ခိုင်းမည်
+    → AI က genre / theme / era ပေါ်မူတည်ပြီး
+      ဇာတ်ခေါင်းစဥ် ၅ ခု ထုတ်ပြမည်
+    → User ရွေးချယ်ပြီးမှ script ဆက်ရေးမည်
 ```
+
+> ⚡ **[B] ရွေးလျှင် AI မှ ထုတ်ပြမည့် topic format:**
+> ```
+> TOPIC [N]:
+> TITLE     : [YouTube-optimized emotional hook title]
+> CONFLICT  : [1 sentence — core problem]
+> MORAL     : [1 clear life lesson]
+> CHARACTERS: [ဇာတ်ကောင် ၃-၄ ယောက် + role]
+> VIRAL SCORE: [1-10] — [1-line reason]
+> ```
+> 5 ခုပြပြီး → **"ဘယ် topic နဲ့ ဆက်မလဲ?"** မေးမည်
 
 ### Q5 — RUNTIME
 ```
@@ -325,6 +339,28 @@ VOICE           : [အသံပုံစံ — e.g. ခိုင်မာသေ
 VOICE TOOL      : [AI voice သုံးမည် / ကိုယ်တိုင် ဖတ်မည်]
 VOICE SAMPLE    : [URL or "record later"]
 ```
+
+> 🎭 **CHARACTER SETUP — AI generate ဆိုရင် AI မှ မေးရမည်**
+>
+> ```
+> STEP 1 — ဇာတ်ကောင် ဘယ်နှစ်ယောက် သုံးမှာလဲ?
+>          (ဥပမာ — ၃ ယောက် / ၄ ယောက် / ၅ ယောက်)
+>
+> STEP 2 — ဇာတ်ကောင် တစ်ယောက်စီ role ကဘာလဲ?
+>          ဥပမာ —
+>          ကောင်မလေး (Hero)
+>          ကောင်လေး (Love Interest)
+>          လူဆိုး (Antagonist)
+>          အဖေ (Elder / Support)
+>          သူငယ်ချင်း (Friend)
+>
+> STEP 3 — AI က role တစ်ခုချင်းစီအတွက်
+>          character name ၃ ခု အကြံပြုမည် —
+>          ဥပမာ (Hero အတွက်): Kai / Arion / Theron
+>          User approve မဖြစ်ခင် character lock မချရ
+> ```
+>
+> ⚠️ Character name approve ပြီးမှ CHAR_[Name] ID ထည့်မည်
 
 > 🔒 **VOICE LOCK** — Character approve ပြီးနောက် voice style မပြောင်းရ
 > Voice ကို Phase 5 video prompt ထဲ တစ်ခါတည်း ထည့်မည်
@@ -899,25 +935,41 @@ Episode [N+1] — [day] မှာ ထွက်မည် — 🔔 နှိပ်
 ## ✅ PRODUCTION CHECKLIST
 
 ```
-[ ] STEP 0    — Aspect Ratio + Style + Script + Runtime + Tools + Story confirmed
+PRE-PRODUCTION
+[ ] STEP 0    — Aspect Ratio + Style + Script/Topic + Runtime + Tools + Story confirmed
 [ ] PHASE 1   — Episode 1 script approved ([N] clips, ~[X] min)
 [ ] PHASE 1.5 — Dialogue language confirmed (မြန်မာ / English)
-[ ] PHASE 2   — All characters approved + locked (face / outfit / voice)
+[ ] PHASE 2   — Character count + roles confirmed
+[ ]             Character names approved (AI generate or manual)
+[ ]             All characters locked (face / outfit / voice / reference)
 [ ] PHASE 3   — All environments approved + locked
 [ ] PHASE 4   — All scene compositions approved
-[ ] PHASE 5   — All video prompts generated (subtitle burn included)
-[ ] PHASE 5.5 — CapCut assembly
-[ ]             Clips imported + ordered
-[ ]             Transitions added
-[ ]             Subtitles checked
-[ ]             BGM mixed (dialogue 100% / BGM 20-30%)
-[ ]             Exported 1080p MP4
-[ ] PHASE 6   — YouTube title (A/B/C) selected
+
+PRODUCTION
+[ ] PHASE 5   — All video prompts generated
+[ ]             Image-to-video used (NOT text-to-video) ✅
+[ ]             Clip continuity checked (CONTINUE FROM / LEADS INTO)
+[ ]             Voice + subtitle burn included per clip
+
+POST-PRODUCTION (CapCut)
+[ ] PHASE 5.5 — Clips imported + ordered correctly
+[ ]             Transitions added per Phase 5 spec
+[ ]             Subtitles checked (font / position / language)
+[ ]             BGM track added — episode-wide (not per-clip)
+[ ]             SFX levels — Dialogue 100% / SFX 70% / BGM 25%
+[ ]             Outro card added (channel name + subscribe prompt)
+[ ]             Exported 1080p MP4 / correct aspect ratio
+
+UPLOAD (YouTube)
+[ ] PHASE 6   — Thumbnail created (1280x720, correct color grade)
+[ ]             YouTube title selected (A/B/C option)
 [ ]             Description written + timestamps added
-[ ]             Thumbnail created (1280x720)
-[ ]             Tags added
+[ ]             Tags added (copy from Phase 6 package)
 [ ]             Pinned comment ready
 [ ]             Video uploaded to YouTube
+[ ]             Pinned comment posted within 10 min of upload ⏱️
+[ ]             End screen / Cards added in YouTube Studio
+[ ]             Video shared to Community tab (if applicable)
 ```
 
 ---
@@ -925,15 +977,16 @@ Episode [N+1] — [day] မှာ ထွက်မည် — 🔔 နှိပ်
 ## 🔄 MASTER FLOW
 
 ```
-STEP 0  → Aspect Ratio → Style → Script ရှိ/မရှိ → Runtime → Tools → Story
+STEP 0  → Aspect Ratio → Style → Story/Script option → Runtime → Tools → Genre/Era
+            ↓
+            [B] Topic ရွေးရင် → AI က topic 5 ခု generate → User ရွေး
+            [A] Script ရှိရင် → တိုက်ရိုက် Phase 1 သွား
             ↓
 PHASE 1 → Script (Ep1 max 2min) → approve
             ↓
 PHASE 1.5 → Dialogue language ရွေး (မြန်မာ / English)
-             မြန်မာ ရွေး → video generate မှာ subtitle burn
-             English ရွေး → subtitle မလို
             ↓
-PHASE 2 → Character prompts → approve → LOCK
+PHASE 2 → Character count + roles → AI name suggestions → approve → LOCK
             (face + outfit + voice + reference method သတ်မှတ်)
             ↓
 PHASE 3 → Environment prompts → approve → LOCK
@@ -941,14 +994,15 @@ PHASE 3 → Environment prompts → approve → LOCK
 PHASE 4 → Scene compositions (locked char ref + env) → approve
             ↓
 PHASE 5 → Video prompts → generate clips
-            (voice + subtitle burn တစ်ခါတည်းပါ)
+            (Image-to-video only / voice + subtitle burn ပါ)
             ↓
 PHASE 5.5 → CapCut assembly
-            (import → transitions → BGM → export 1080p)
+            (import → transitions → BGM episode-wide → SFX mix → outro card → export)
             ↓
-PHASE 6 → YouTube title/description/thumbnail/tags/pinned comment
+PHASE 6 → Thumbnail + YouTube title/description/tags
+            → Upload → Pinned comment (within 10 min) → End screen
 
-✅ Episode 1 done → repeat PHASE 1 for Episode 2
+✅ Episode 1 done → repeat from PHASE 1 for Episode 2
 ```
 
 > ⚡ **ABSOLUTE RULES:**
