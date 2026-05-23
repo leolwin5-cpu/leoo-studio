@@ -252,10 +252,19 @@ DIALOGUE (if any):
 [CHAR]: "[line]"
 SUBTITLE: "[translation]"
 
+BGM CUE  : [mood music — e.g. dramatic orchestra / slow piano / silence]
+SFX CUE  : [action sounds — e.g. sword clash, horse hooves, crowd murmur]
+MIX      : Dialogue 100% / SFX 70% / BGM 25%
+           → Dialogue ရှိချိန် BGM နှိမ့်ထား (ducking)
+           → Action ဖြစ်ချိန် SFX ထင်ရှားအောင်
+
 FLOW NOTE  : [ရှေ့ clip မှ ဆက် / နောက် clip သို့ ဘာနဲ့သွား]
-SOUND CUE  : [ambient / music / silence]
 ---
 ```
+
+> 📌 **SOUND NOTE:**
+> Phase 5 video prompt ထဲ BGM + SFX တစ်ခါတည်း ထည့်နိုင်သည် (Veo 3 / Kling)
+> BGM continuity အတွက် Phase 5.5 CapCut မှာ episode-wide BGM track ထပ်ခံပါ
 
 ### Camera Guide
 ```
@@ -392,6 +401,47 @@ film grain, 8K, no cartoon elements"
 
 > 🔁 **"Character ✅ Lock မလား ❌ ပြင်မလား?"**
 > ✅ All characters locked → Phase 3
+
+> 🔒 **CHARACTER LOCK TIPS — Image Tool ပေါ်မူတည်၍ AI မှ အကြံပြုပေးရမည်**
+>
+> **Gemini / GPT Image သုံးရင် →**
+> ```
+> → Character approve ပြီးတာနဲ့ views ၄ ပုံ generate လုပ်ပါ
+>   (front / side-left / side-right / close-up face)
+> → ပုံ ၄ ပုံကို Google Drive / Imgur တင်ပြီး URL သိမ်းပါ
+> → Phase 4/5 prompt တိုင်းမှာ URL ထည့်ပြီး
+>   "maintain exact same appearance" ဆိုပြီး ထည့်ပါ
+> ```
+>
+> **Midjourney သုံးရင် →**
+> ```
+> → Character generate လုပ်တဲ့ Seed number ကို မှတ်ထားပါ
+>   (Job ID မှ seed ကို copy ယူ)
+> → နောက်ပုံတွေမှာ --seed [number] ထည့်ပါ
+>   ဥပမာ: "... --seed 4829301 --ar 2:3 --v 7"
+> → ဒါဆိုရင် face + outfit ပိုနီးစပ်မှာ
+> ```
+>
+> **FLUX (fal.ai) သုံးရင် →**
+> ```
+> → Approved character image ကို IP-Adapter feature နဲ့
+>   reference image အဖြစ် upload လုပ်ပါ
+> → Face + outfit consistency အများကြီး ကောင်းမှာ
+>   → fal.ai > FLUX > IP-Adapter option ကို သုံးပါ
+> ```
+>
+> **Character Bible (ဘာ tool မဆို) →**
+> ```
+> Approve ဖြစ်တာနဲ့ ဒီပုံစံနဲ့ ရေးထားပါ —
+>
+> [CHAR_Name — LOCKED v1.0]
+> FACE    : [jaw shape, eye color, hair, scar/mark]
+> SKIN    : [tone, texture]
+> OUTFIT  : [every item described — color, material, detail]
+> WEAPON  : [size, material, marking]
+> BUILD   : [height, weight feel, posture]
+> ⚠️ NEVER change any of the above across all episodes
+> ```
 
 > 📌 **CHARACTER REFERENCE METHOD**
 > Character approve ပြီး lock ချပြီးနောက် —
@@ -561,7 +611,9 @@ ACTION: [complete action start-to-end, no cuts],
 DIALOGUE: [CHAR mouth-syncs] '[line]',
 VOICE: [CHAR_Name locked voice style — e.g. deep calm male voice],
 SUBTITLE BURN: '[dialogue line]' — [position: bottom center] [font: bold white] [size: medium],
-SOUND: [ambient], MUSIC: [BGM cue],
+BGM: [mood — e.g. slow dramatic orchestra, low volume],
+SFX: [action sounds — e.g. horse hooves, sword clash, crowd murmur],
+AUDIO MIX: dialogue 100% / SFX 70% / BGM 25%,
 mood: [tone], seamless from previous clip,
 film grain, anamorphic, ultra realistic, 8K"
 ```
@@ -643,6 +695,40 @@ ROMANCE          → soft strings, gentle melody
 ```
 
 > 🔁 **"Video prompts အဆင်သင့်။ [Tool name] တွင် generate လုပ်ပါ။"**
+
+> 🔒 **VIDEO CHARACTER CONSISTENCY TIPS — Video Tool ပေါ်မူတည်၍ AI မှ အကြံပြုပေးရမည်**
+>
+> **Veo 3 သုံးရင် →**
+> ```
+> → Image-to-video ဘဲ သုံးပါ (text-to-video မသုံးနဲ့)
+> → Phase 4 composition image ကို source image အဖြစ် upload
+> → Prompt မှာ character description အပြည့် ထပ်ထည့်
+> → "maintain exact character appearance from reference image"
+>   ဆိုတာ မဖြစ်မနေ ထည့်ပါ
+> → BGM + SFX prompt ထဲ တစ်ခါတည်း ထည့်လို့ရတယ်
+> ```
+>
+> **Kling 3.0 သုံးရင် →**
+> ```
+> → Image-to-video mode သုံးပါ
+> → Character reference image ကို "Character Reference" slot
+>   မှာ တင်ပါ (Kling မှာ built-in character consistency feature ရှိ)
+> → Face lock ကောင်းသောကြောင့် multi-clip consistency အတွက် ကောင်းတယ်
+> ```
+>
+> **Runway Gen-4 သုံးရင် →**
+> ```
+> → "Act One" feature သုံးပါ — character reference image upload လုပ်ပြီး
+>   episode တစ်ခုလုံး same character ထိန်းနိုင်တယ်
+> → Camera control အကောင်းဆုံး — battle scene continuity ကောင်း
+> ```
+>
+> **ဘာ tool မဆို — Universal rule →**
+> ```
+> ⚠️ Text-to-video မသုံးနဲ့ — character drift ဖြစ်မယ်
+> ✅ Image-to-video ဘဲ သုံး — Phase 4 image = source
+> ✅ Clip တိုင်း CONTINUE FROM စစ်ပြီးမှ generate
+> ```
 
 ---
 
