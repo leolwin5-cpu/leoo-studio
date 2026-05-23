@@ -38,14 +38,30 @@ MINOR CHARS        : တစ်ကြိမ်သာပါသော ဇာတ်�
 
 ## STEP 0 — PROJECT SETUP
 
-> AI မှ မေးခွန်းများ တစ်ခုချင်းစီ မေးရမည်။ User ဖြေပြီးမှ ဆက်ရမည်။
+> AI မှ မေးခွန်းများ တစ်ခုချင်းစီ မေးရမည်။
+> တစ်ခုဖြေပြီးမှ နောက်တစ်ခု မေးရမည်။ မဖြေမချင်း မဆက်ရ။
 
 ### Q1 — PROJECT TITLE
 ```
 သင့် series / video ရဲ့ အမည်ကဘာလဲ?
 ```
 
-### Q2 — VISUAL STYLE
+### Q2 — ASPECT RATIO
+```
+Video ဘယ် format နဲ့ လုပ်မှာလဲ ရွေးပါ —
+
+[A] 16:9  — YouTube / Landscape (အကြံပြု)
+            YouTube တင်မှာဆိုရင် ဒါကိုရွေးပါ
+            → Thumbnail + Description package အပြည့်ပါမည်
+
+[B] 9:16  — TikTok / Reels / Shorts (Vertical)
+            Social media short form အတွက်
+
+[C] 1:1   — Instagram Square
+            Social media post အတွက်
+```
+
+### Q3 — VISUAL STYLE
 ```
 အောက်ပါထဲမှ ရွေးပါ —
 
@@ -72,7 +88,30 @@ MINOR CHARS        : တစ်ကြိမ်သာပါသော ဇာတ်�
 [F] CUSTOM — ကိုယ်တိုင် describe မည်
 ```
 
-### Q3 — IMAGE GENERATION TOOL
+### Q4 — SCRIPT
+```
+Script ဘယ်လိုလုပ်မှာလဲ?
+
+[A] ငါ့မှာ script ရှိပြီးသား — paste လုပ်ပေးမည်
+    → AI က script ကို clip format အဖြစ် ပြောင်းပေးမည်
+
+[B] AI ရေးပေးပါ — story outline ပြောမည်
+    → AI က story outline ကို အခြေခံပြီး script ရေးပေးမည်
+```
+
+### Q5 — RUNTIME
+```
+Episode 1 ဘယ်လောက်ကြာချင်လဲ?
+
+[A] ~1 min  (8 clips)   — အတိုဆုံး၊ hook အတွက်
+[B] ~2 min  (15 clips)  — အကြံပြု — Ep1 standard
+[C] ~3 min  (22 clips)  — ဇာတ်လမ်းရှည်ချင်ရင်
+
+⚠️ Episode 1 = max 2 min အကြံပြု
+   ပရိတ်သတ်ကို Ep2 စောင့်ချင်အောင် ဆုံးရမည်
+```
+
+### Q6 — IMAGE GENERATION TOOL
 ```
 ပုံ generate လုပ်ရန် tool ရွေးပါ —
 
@@ -107,62 +146,72 @@ PAID / PREMIUM:
       → ideogram.ai (Free tier ရှိ)
 ```
 
-### Q4 — VIDEO GENERATION TOOL
+### Q7 — VIDEO GENERATION TOOL
 ```
 Video generate လုပ်ရန် tool ရွေးပါ —
 (Note: Clip တိုင်း = 8sec generate လုပ်မည်)
 
-FREE TIER ရှိသော:
-  [1] Veo 3 (Google)
+FREE — No watermark:
+  [1] Veo 3 (Google AI Studio)
       Realism + audio integration အကောင်းဆုံး
-      Free tier: Google AI Studio မှတဆင့်
       → aistudio.google.com
 
-  [2] Kling 3.0 (Kuaishou)
-      Fast action + cinematic quality အတွက် ကောင်း
-      Free tier: limited credits
+  [2] Seedance (ByteDance) ⭐ အကြံပြု
+      No watermark၊ daily free credits
+      Veo 3.1 + Kling 3.0 နှစ်မျိုးလုံး access
+      → seedance.tv
+
+  [3] PixVerse
+      Daily credits refresh — indefinitely free
+      → pixverse.ai
+
+  [4] Pika 2.5
+      40 credits/day free၊ stylized clips
+      → pika.art
+
+  [5] Luma Dream Machine
+      Smooth motion၊ free tier ရှိ
+      → lumalabs.ai
+
+  [6] Meta AI Video
+      Unlimited generations
+      → meta.ai
+
+FREE — Limited credits:
+  [7] Kling 3.0
+      Action/cinematic quality ကောင်း
       → klingai.com
 
-  [3] Hailuo 02 (MiniMax)
-      Character consistency အတွက် ကောင်း
-      Free tier: 5 clips/day
+  [8] Hailuo 02 (MiniMax)
+      Character consistency ကောင်း၊ 5 clips/day
       → hailuoai.com
 
-  [4] Runway Gen-4 (Runway ML)
-      Camera control + editing အတွက် အကောင်းဆုံး
-      Free tier: 125 credits
+  [9] Runway Gen-4
+      Camera control အကောင်းဆုံး၊ 125 credits
       → runwayml.com
 
 PAID / PREMIUM:
-  [5] Kling 3.0 Pro
-      Battle/action scenes အတွက် အကောင်းဆုံး
-      → klingai.com ($10/mo မှ)
-
-  [6] Veo 3 Pro (Google)
-      YouTube production quality
-      → Google One AI Premium
-
-  [7] Luma Dream Machine
-      Smooth motion အတွက် ကောင်း
-      Free tier ရှိ → lumalabs.ai
+  [10] Kling 3.0 Pro  → klingai.com ($10/mo မှ)
+  [11] Veo 3 Pro      → Google One AI Premium
+  [12] Runway Pro     → runwayml.com ($15/mo မှ)
 ```
 
-### Q5 — GENRE & ERA
+### Q8 — GENRE & ERA
 ```
 Genre   : Action / Romance / Comedy / Drama / Fantasy / Historical / Horror
 Era     : [ဘယ်ခေတ်၊ ဘယ်နေရာ]
 ```
 
-### Q6 — LANGUAGE
+### Q9 — LANGUAGE
 ```
 Dialogue  : မြန်မာ / English / နှစ်ခုလုံး
 Subtitle  : မြန်မာ / English / မလို
 ```
 
-### Q7 — STORY OUTLINE
+### Q10 — STORY OUTLINE
 ```
 အောက်ပါကို အကြမ်းဖျင်း ပြောပါ —
-- ဇာတ်ကောင် အဓိက ဘယ်သူတွေ?
+- ဇာတ်ကောင် အဓိက ဘယ်သူတွေ? (အမည်၊ role)
 - Conflict / problem က ဘာ?
 - ဇာတ်လမ်း ဘယ်မှာ ဆုံးမည်?
 ```
@@ -556,9 +605,13 @@ ROMANCE          → soft strings, gentle melody
 
 ---
 
-## PHASE 6 — METADATA + SUBTITLES
+## PHASE 6 — YOUTUBE PRODUCTION PACKAGE
+> 🎯 Aspect Ratio 16:9 ရွေးထားလျှင် → Full YouTube package ထုတ်မည်
+> 🎯 9:16 / 1:1 ရွေးထားလျှင် → SRT + basic metadata သာ ထုတ်မည်
 
-### SRT Format
+---
+
+### 6A — SRT SUBTITLE FILE
 ```srt
 1
 00:00:00,000 --> 00:00:08,000
@@ -567,28 +620,120 @@ ROMANCE          → soft strings, gentle melody
 2
 00:00:08,000 --> 00:00:16,000
 [Clip 2 subtitle]
+
+[ဆက်လက်...]
 ```
 
-### YouTube Metadata
+---
+
+### 6B — YOUTUBE TITLES (A/B/C Test)
 ```
-TITLE (3 options):
-A: [Action hook]
-B: [Emotion hook]
-C: [Outcome hook]
+Option A — ACTION HOOK:
+"[Character] [dramatic action] | [Series Name] Ep.[N]"
+ဥပမာ — "He Rode Alone Into 1000 Enemies | Ancient Myanmar Battle Ep.1"
 
-DESCRIPTION:
-[2-line hook]
-[Story premise]
-[Timestamps — every 8sec]
-[Theme/moral]
-[Hashtags]
+Option B — EMOTION HOOK:
+"[Emotional situation] | [Series Name]"
+ဥပမာ — "The Prisoner Who Saved a Kingdom | Myanmar Battle Series"
 
-THUMBNAIL:
-Clip      : [most dramatic]
-Character : [CHAR_Name]
-Expression: [fierce/heartbroken/triumphant]
-Text      : "[punchy phrase]"
-Color     : [High contrast warm/Cool dark/Vibrant]
+Option C — MYSTERY / CURIOSITY HOOK:
+"[Question or unresolved tension] | [Series Name] Ep.[N]"
+ဥပမာ — "Why Did He Volunteer to Die? | Myanmar Kingdom Story"
+
+⚡ Rules:
+- Max 60 characters (YouTube truncates after 60)
+- Episode number ထည့်ပါ
+- Series name ထည့်ပါ (channel branding)
+```
+
+---
+
+### 6C — YOUTUBE DESCRIPTION TEMPLATE
+```
+[LINE 1-2 — Dramatic hook — ပထမ 2 ကြောင်းကို YouTube search result မှာ မြင်ရသည်]
+[ဥပမာ: "A prisoner with nothing to lose. One chance to save his kingdom."]
+
+[LINE 3-4 — Story premise]
+[ဥပမာ: "When no general dared to answer the Chinese envoy's challenge,
+one imprisoned warrior stepped forward — alone."]
+
+⏱️ TIMESTAMPS:
+00:00 — [Clip 1 description]
+00:08 — [Clip 2 description]
+00:16 — [Clip 3 description]
+[ဆက်လက် — clip တိုင်း 8sec စီ]
+
+🎬 [Series Name] — Episode [N]
+[Theme / moral in 1 sentence]
+
+📺 Watch Episode 2: [link — ရရင်ထည့်]
+🔔 Subscribe for new episodes every week!
+
+🏷️ HASHTAGS:
+[genre-specific] [era-specific] [style-specific]
+ဥပမာ: #MyanmarHistory #AncientBattle #CinematicVideo
+       #AIVideo #AIGenerated #HistoricalDrama
+```
+
+---
+
+### 6D — THUMBNAIL BRIEF
+```
+⚡ 16:9 format — 1280x720px အကြံပြု
+
+SCENE        : [Most dramatic clip number — impact/reveal moment]
+CHARACTER    : [CHAR_Name — locked reference]
+EXPRESSION   : [fierce / heartbroken / triumphant / shocked]
+ACTION       : [ဘာလုပ်နေသလဲ — e.g. spear raised, staring into distance]
+BACKGROUND   : [ENV_Name — blurred or atmospheric]
+
+TEXT OVERLAY:
+  Main text  : "[Short punchy phrase — max 4 words]"
+               ဥပမာ — "ALONE AGAINST ALL"
+  Sub text   : "[Series name or episode]"
+               ဥပမာ — "Myanmar Battle Series Ep.1"
+  Font style : Bold, high contrast, white with dark outline
+  Position   : Left or bottom — character ကို မဖုံးမိအောင်
+
+COLOR GRADE:
+  Action/Battle  → High contrast warm — deep red / gold / orange
+  Romance/Drama  → Soft warm — amber / rose / soft gold
+  Mystery/Dark   → Cool dark — deep blue / teal / shadow
+  Fantasy        → Vibrant — purple / gold / electric blue
+
+COMPOSITION TIPS:
+  - Character ကို frame ရဲ့ right side မှာ ထားပါ
+  - Text ကို left side မှာ ထားပါ
+  - မျက်နှာ / မျက်လုံး ကို crop မဖြတ်ပါနဲ့
+  - Background blur လုပ်ပြီး character ကို ထင်ရှားစေပါ
+```
+
+---
+
+### 6E — TAGS (Copy-paste ready)
+```
+[Auto-generate based on genre/era/style selected in STEP 0]
+
+ဥပမာ (Historical Action):
+myanmar history, ancient myanmar, myanmar battle, historical drama,
+ai generated video, cinematic ai, myanmar kingdom, ancient warrior,
+ai video 2025, myanmar short film, historical action, epic battle,
+myanmar animation, myanmar series, ai storytelling
+```
+
+---
+
+### 6F — PINNED COMMENT TEMPLATE
+```
+English:
+"⚔️ What do YOU think happens next?
+Drop your prediction in the comments!
+Episode [N+1] drops [day] — hit 🔔 so you don't miss it!"
+
+မြန်မာ:
+"⚔️ နောက်မှာ ဘာဖြစ်မယ်ထင်လဲ?
+မှတ်ချက်မှာ ပြောပြပေးပါ!
+Episode [N+1] — [day] မှာ ထွက်မည် — 🔔 နှိပ်ထားပါ!"
 ```
 
 ---
@@ -596,8 +741,8 @@ Color     : [High contrast warm/Cool dark/Vibrant]
 ## ✅ PRODUCTION CHECKLIST
 
 ```
-[ ] STEP 0  — Style + Tools + Story confirmed
-[ ] PHASE 1 — Episode 1 script approved
+[ ] STEP 0  — Aspect Ratio + Style + Script + Runtime + Tools + Story confirmed
+[ ] PHASE 1 — Episode 1 script approved ([N] clips, ~[X] min)
 [ ] PHASE 2 — All characters approved + locked
 [ ] PHASE 3 — All environments approved + locked
 [ ] PHASE 4 — All scene compositions approved
@@ -605,7 +750,13 @@ Color     : [High contrast warm/Cool dark/Vibrant]
 [ ]           Clips assembled in order
 [ ]           BGM mixed under dialogue
 [ ]           Subtitles synced
-[ ] PHASE 6 — Metadata applied + thumbnail uploaded
+[ ] PHASE 6 — SRT subtitles done
+[ ]           YouTube title (A/B/C) selected
+[ ]           Description written + timestamps added
+[ ]           Thumbnail created (1280x720)
+[ ]           Tags added
+[ ]           Pinned comment ready
+[ ]           Video uploaded to YouTube
 ```
 
 ---
@@ -613,24 +764,33 @@ Color     : [High contrast warm/Cool dark/Vibrant]
 ## 🔄 MASTER FLOW
 
 ```
-STEP 0  → Style / Tools / Story confirm
-PHASE 1 → Script (Ep1) → approve
+STEP 0  → Aspect Ratio → Style → Script ရှိ/မရှိ → Runtime → Tools → Story
+            ↓
+PHASE 1 → Script (Ep1 max 2min) → approve
+            ↓
 PHASE 2 → Character prompts → approve → LOCK
+            ↓
 PHASE 3 → Environment prompts → approve → LOCK
-PHASE 4 → Scene compositions → approve
-PHASE 5 → Video prompts → generate
-PHASE 6 → Subtitles + Metadata
+            ↓
+PHASE 4 → Scene compositions (locked char + env) → approve
+            ↓
+PHASE 5 → Video prompts → generate clips
+            ↓
+PHASE 6 → SRT + YouTube title/description/thumbnail/tags/pinned comment
 
 ✅ Episode 1 done → repeat PHASE 1 for Episode 2
 ```
 
-> ⚡ **ABSOLUTE RULE:**
-> Character lock = မပြောင်းရ — ဇာတ်တွဲအားလုံး၊ scene အားလုံး
-> ဤ rule တစ်ခုတည်းသည် video reality ကို ဆုံးဖြတ်သည်
+> ⚡ **ABSOLUTE RULES:**
+> 1. Character lock = မပြောင်းရ — episode တိုင်း၊ scene တိုင်း
+> 2. Phase တိုင်း approve မဖြစ်ခင် နောက် phase မသွားရ
+> 3. Clip တိုင်း CONTINUE FROM + LEADS INTO စစ်ဆေးပြီးမှ generate လုပ်ရမည်
+> 4. ဤ rules တွေသာ video reality ကို ဆုံးဖြတ်သည်
 
 ---
 
-*LEOO STUDIO — Universal Master Workflow v4.0*
-*Image: Gemini / FLUX / Midjourney / GPT Image / Grok / Adobe Firefly*
-*Video: Veo 3 / Kling 3.0 / Runway Gen-4 / Hailuo 02*
-*Style: Cinema Realistic / 3D Animation / 2D Anime / Pixel Art / Dark Fantasy*
+*LEOO STUDIO — Universal Master Workflow v5.0*
+*Image: Gemini / FLUX / Midjourney / GPT Image / Grok / Adobe Firefly / Ideogram*
+*Video: Veo 3 / Seedance / PixVerse / Pika / Meta AI / Kling / Hailuo / Runway / Luma*
+*Style: Cinema Realistic / 3D Animation / 2D Anime / Pixel Art / Dark Fantasy / Custom*
+*Ratio: 16:9 (YouTube) / 9:16 (Shorts/Reels) / 1:1 (Instagram)*
