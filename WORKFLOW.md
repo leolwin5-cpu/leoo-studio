@@ -278,6 +278,29 @@ ENDING           → Medium wide → fade black / freeze frame
 
 ---
 
+## PHASE 1.5 — DIALOGUE LANGUAGE CONFIRMATION
+
+> 🎯 Script approve ဖြစ်ပြီးချင်း AI မှ ဤမေးခွန်းကို မေးရမည်။
+> ဖြေပြီးမှ Phase 2 သို့ ဆက်ရမည်။
+
+```
+Dialogue ဘာသာစကား ရွေးပါ —
+
+[A] မြန်မာဘာသာ
+    → Dialogue အားလုံး မြန်မာဘာသာဖြင့် ရေးမည်
+    → Phase 6 တွင် English subtitle (.SRT) အလိုအလျောက် ထုတ်ပေးမည်
+
+[B] English
+    → Dialogue အားလုံး English ဖြင့် ရေးမည်
+    → Subtitle မလိုအပ်ပါ
+```
+
+> ⚡ **Auto-rule:**
+> - [A] မြန်မာ ရွေးသည် → Phase 6 မှာ English SRT မဖြစ်မနေ ထုတ်ရမည်
+> - [B] English ရွေးသည် → Phase 6 မှာ SRT section ကို skip လုပ်ရမည်
+
+---
+
 ## PHASE 2 — CHARACTER DESIGN PROMPTS
 
 > 🎯 Main/recurring characters တိုင်း prompt ထုတ်မည်
