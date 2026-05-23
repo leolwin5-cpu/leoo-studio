@@ -312,7 +312,13 @@ OUTFIT          : [အသေးစိတ်]
 WEAPON/PROP     : [လက်နက်]
 REFERENCE       : [URL or "describe only"]
 PERSONALITY     : [၂-၃ လုံး]
+VOICE           : [အသံပုံစံ — e.g. ခိုင်မာသောယောက်ျားအသံ / နူးညံ့သောမိန်းမအသံ]
+VOICE TOOL      : [AI voice သုံးမည် / ကိုယ်တိုင် ဖတ်မည်]
+VOICE SAMPLE    : [URL or "record later"]
 ```
+
+> 🔒 **VOICE LOCK** — Character approve ပြီးနောက် voice style မပြောင်းရ
+> Voice ကို Phase 5 video prompt ထဲ တစ်ခါတည်း ထည့်မည်
 
 ### Prompts by Tool & Style
 
@@ -553,6 +559,8 @@ ACTION: [complete action start-to-end, no cuts],
 [CHAR_Name1 — locked outfit, motion, expression],
 [CHAR_Name2 — reaction/counter],
 DIALOGUE: [CHAR mouth-syncs] '[line]',
+VOICE: [CHAR_Name locked voice style — e.g. deep calm male voice],
+SUBTITLE BURN: '[dialogue line]' — [position: bottom center] [font: bold white] [size: medium],
 SOUND: [ambient], MUSIC: [BGM cue],
 mood: [tone], seamless from previous clip,
 film grain, anamorphic, ultra realistic, 8K"
@@ -635,6 +643,37 @@ ROMANCE          → soft strings, gentle melody
 ```
 
 > 🔁 **"Video prompts အဆင်သင့်။ [Tool name] တွင် generate လုပ်ပါ။"**
+
+---
+
+## PHASE 5.5 — POST PRODUCTION (CapCut)
+
+> 🎯 Generated clips တွေကို CapCut မှာ assembly လုပ်မည်
+
+```
+STEP 1 — IMPORT
+  → Generated video clips အားလုံး CapCut သို့ import လုပ်ပါ
+  → Clip order = Phase 4 script အတိုင်း စီပါ
+
+STEP 2 — TRANSITIONS
+  → Clip တစ်ခုနဲ့တစ်ခုကြား Phase 5 မှ သတ်မှတ်ထားသော
+    transition type အတိုင်း ထည့်ပါ
+    [CROSSFADE 0.3s] / [HARD CUT] / [SLOW DISSOLVE] / [FADE TO BLACK]
+
+STEP 3 — SUBTITLE (Phase 1.5 မှာ မြန်မာ ရွေးထားလျှင်)
+  → Video generate လုပ်ချိန်မှာ subtitle burn မပါသေးလျှင်
+  → CapCut Auto Caption သုံး → English subtitle ထည့်ပါ
+  → Font: Bold White, Position: Bottom Center
+
+STEP 4 — BGM
+  → Phase 5 BGM cue အတိုင်း CapCut sound library မှ ရှာပါ
+  → Dialogue volume: 100% / BGM volume: 20-30%
+
+STEP 5 — EXPORT
+  → Resolution : 1080p (16:9) / 1080x1920 (9:16) / 1080x1080 (1:1)
+  → Frame rate  : 24fps (cinematic) / 30fps (standard)
+  → Format      : MP4
+```
 
 ---
 
@@ -777,15 +816,17 @@ Episode [N+1] — [day] မှာ ထွက်မည် — 🔔 နှိပ်
 [ ] STEP 0    — Aspect Ratio + Style + Script + Runtime + Tools + Story confirmed
 [ ] PHASE 1   — Episode 1 script approved ([N] clips, ~[X] min)
 [ ] PHASE 1.5 — Dialogue language confirmed (မြန်မာ / English)
-[ ] PHASE 2   — All characters approved + locked + reference method set
+[ ] PHASE 2   — All characters approved + locked (face / outfit / voice)
 [ ] PHASE 3   — All environments approved + locked
 [ ] PHASE 4   — All scene compositions approved
-[ ] PHASE 5   — All video prompts generated
-[ ]             Clips assembled in order
-[ ]             BGM mixed under dialogue
-[ ]             Subtitles synced
-[ ] PHASE 6   — SRT subtitles done (မြန်မာ dialogue ရွေးထားလျှင်သာ)
-[ ]             YouTube title (A/B/C) selected
+[ ] PHASE 5   — All video prompts generated (subtitle burn included)
+[ ] PHASE 5.5 — CapCut assembly
+[ ]             Clips imported + ordered
+[ ]             Transitions added
+[ ]             Subtitles checked
+[ ]             BGM mixed (dialogue 100% / BGM 20-30%)
+[ ]             Exported 1080p MP4
+[ ] PHASE 6   — YouTube title (A/B/C) selected
 [ ]             Description written + timestamps added
 [ ]             Thumbnail created (1280x720)
 [ ]             Tags added
@@ -803,19 +844,23 @@ STEP 0  → Aspect Ratio → Style → Script ရှိ/မရှိ → Runtime
 PHASE 1 → Script (Ep1 max 2min) → approve
             ↓
 PHASE 1.5 → Dialogue language ရွေး (မြန်မာ / English)
-             မြန်မာ ရွေး → Phase 6 တွင် English SRT အလိုအလျောက်ထုတ်
-             English ရွေး → Phase 6 တွင် SRT skip
+             မြန်မာ ရွေး → video generate မှာ subtitle burn
+             English ရွေး → subtitle မလို
             ↓
-PHASE 2 → Character prompts → approve → LOCK + reference method သတ်မှတ်
+PHASE 2 → Character prompts → approve → LOCK
+            (face + outfit + voice + reference method သတ်မှတ်)
             ↓
 PHASE 3 → Environment prompts → approve → LOCK
             ↓
 PHASE 4 → Scene compositions (locked char ref + env) → approve
             ↓
 PHASE 5 → Video prompts → generate clips
+            (voice + subtitle burn တစ်ခါတည်းပါ)
             ↓
-PHASE 6 → [မြန်မာ] SRT English + YouTube package
-          [English] YouTube package only
+PHASE 5.5 → CapCut assembly
+            (import → transitions → BGM → export 1080p)
+            ↓
+PHASE 6 → YouTube title/description/thumbnail/tags/pinned comment
 
 ✅ Episode 1 done → repeat PHASE 1 for Episode 2
 ```
